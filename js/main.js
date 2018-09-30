@@ -10,17 +10,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 
-Papa.parse("http://localhost:9005/a-vehicles-observations.csv", {
+/*Papa.parse("http://localhost:9005/a-vehicles-observations.csv", {
   download: true,
   header: true,
   complete: function(results) {
     observations = results.data;
-      /*results.data.forEach( observation => {
-
-          if( observation.latitude && observation.longitude ){
-              L.marker([observation.latitude, observation.longitude]).addTo(map)
-          }
-      })*/
   }
 });
 
@@ -31,7 +25,29 @@ Papa.parse("http://localhost:9005/vehicle-info.csv", {
     vehicleData = results.data[0];
     updateVehicleData();
   }
-});
+});*/
+
+getVehicleData = () => {
+  const vehicleId = $('#vehicleid').val();
+  console.log(vehicleId)
+
+  fetch('/vehicle/'+vehicleId)
+    .then( (res) => res.text() )
+    .then( (res) => {
+    vehicleData = JSON.parse(res)[0];
+    updateVehicleData();
+  })
+
+  fetch('/observations/'+vehicleId)
+    .then( (res) => res.text() )
+    .then( (res) => {
+    observations = JSON.parse(res);
+    currentObservation = 0;
+    update();
+  })
+}
+
+getVehicleData();
 
 next = () => {
   currentObservation++;
