@@ -98,10 +98,14 @@ updateVehicleData = () => {
   $('#subtype').text(vehicleData.subtype)
   $('#make').text(vehicleData.make)
   $('#taxitype').text(vehicleData.taxi_type)
-  $('#enginecapacity').text(vehicleData.engine_capacity)
+  $('#enginecapacity').text(vehicleData.engine_capacity ? vehicleData.engine_capacity + 'cc' : '')
   $('#fueltype').text(vehicleData.fuel_type)
-  $('#grossvehicleweight').text(vehicleData.gross_vehicle_weight)
+  $('#grossvehicleweight').text(vehicleData.gross_vehicle_weight ? vehicleData.gross_vehicle_weight+'kg' : '')
   $('#eurostatus').text(vehicleData.euro_status)
+  $('#fc_combined').text(vehicleData.fc_combined ? vehicleData.fc_combined+"L/100km" : '')
+  $('#fc_extra_urban').text(vehicleData.fc_extra_urban ? vehicleData.fc_extra_urban+"L/100km" : '')
+  $('#fc_urban_cold').text(vehicleData.fc_urban_cold ? vehicleData.fc_urban_cold+"L/100km" : '')
+  $('#co2').text(vehicleData.co2 ? vehicleData.co2 + 'g/km' : '')
 
   const introdate = new Date(vehicleData.intro_date);
   $('#introdate').text(monthNames[introdate.getMonth()]+" "+introdate.getFullYear())
