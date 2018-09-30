@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 
-Papa.parse("http://localhost:8080/a-vehicles-observations.csv", {
+Papa.parse("http://localhost:9005/a-vehicles-observations.csv", {
   download: true,
   header: true,
   complete: function(results) {
@@ -24,7 +24,7 @@ Papa.parse("http://localhost:8080/a-vehicles-observations.csv", {
   }
 });
 
-Papa.parse("http://localhost:8080/vehicle-info.csv", {
+Papa.parse("http://localhost:9005/vehicle-info.csv", {
   download: true,
   header: true,
   complete: function(results) {
@@ -86,7 +86,6 @@ updateVehicleData = () => {
   $('#fueltype').text(vehicleData.fuel_type)
   $('#grossvehicleweight').text(vehicleData.gross_vehicle_weight)
   $('#eurostatus').text(vehicleData.euro_status)
-
 
   const introdate = new Date(vehicleData.intro_date);
   $('#introdate').text(monthNames[introdate.getMonth()]+" "+introdate.getFullYear())
