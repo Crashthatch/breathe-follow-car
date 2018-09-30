@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
         <link rel="stylesheet" href="css/main.css">
 
 
@@ -24,11 +25,35 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="map" style="height: 500px"></div>
+                </div>
+            </diV>
+            <div class="row">
+                <div class="btn btn-primary" onclick="prev()">Prev</div>
+                <div class=""><span id="date">Time</span></div>
+                <div class="btn" onclick="next()">Next</div>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <th>Time</th>
+                        <th>Location</th>
+                    </thead>
+                    <tbody>
+                        <td>123</td>
+                        <td>556</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
         <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
         <script src="node_modules/leaflet/dist/leaflet-src.js"></script>
+        <script src="node_modules/papaparse/papaparse.js"></script>
         <script src="js/main.js"></script>
 
 
