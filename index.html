@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+        <link rel="stylesheet" href="node_modules/moment/package.js">
         <link rel="stylesheet" href="css/main.css">
 
 
@@ -27,27 +28,48 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm">
-                    <div id="map" style="height: 500px"></div>
+                <div class="col-md">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div id="map" style="height: 500px"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="btn btn-primary" onclick="prev()"> &lt; Prev</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="dateWrapper h4" style="text-align: center; margin-top: 0.5rem; margin-top: 0.5rem;">
+                                    <span id="readingnum">Reading</span>
+                                    <span id="date">Time</span>
+                                    - Heading:
+                                    <span id="direction"></span>
+                                </div>
+                            </div>
+                            <div class="col-2" style="text-align: right;">
+                                <div class="btn btn-primary" onclick="next()">Next &gt; </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table-sm">
+                                <tr><td>Type: </td><td><span id="type"></span></td></tr>
+                                <tr><td>Subtype: </td><td><span id="subtype"></span></td></tr>
+                                <tr><td>Make: </td><td><span id="make"></span></td></tr>
+                                <tr><td>Taxi Type: </td><td><span id="taxitype"></span></td></tr>
+                                <tr><td>Engine Capacity: </td><td><span id="enginecapacity"></span>cc</td></tr>
+                                <tr><td>Fuel Type: </td><td><span id="fueltype"></span></td></tr>
+                                <tr><td>Euro Status: </td><td><span id="eurostatus"></span></td></tr>
+                                <tr><td>Intro Date: </td><td><span id="introdate"></span></td></tr>
+                                <tr><td>Gross Vehicle Weight: </td><td><span id="grossvehicleweight"></span></td></tr>
+                                <tr><td>FC Combined: </td><td><span id="fc_combined"></span></td></tr>
+                                <tr><td>FC Extra Urban: </td><td><span id="fc_extra_urban"></span></td></tr>
+                                <tr><td>FC Urban Cold: </td><td><span id="fc_urban_cold"></span></td></tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </diV>
-            <div class="row">
-                <div class="btn btn-primary" onclick="prev()">Prev</div>
-                <div class=""><span id="date">Time</span></div>
-                <div class="btn" onclick="next()">Next</div>
-            </div>
-            <div class="row">
-                <table class="table">
-                    <thead>
-                        <th>Time</th>
-                        <th>Location</th>
-                    </thead>
-                    <tbody>
-                        <td>123</td>
-                        <td>556</td>
-                    </tbody>
-                </table>
-            </div>
         </div>
 
         <script src="node_modules/jquery/dist/jquery.js"></script>
