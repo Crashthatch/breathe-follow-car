@@ -11,7 +11,7 @@ const pool = new Pool({
 })
 
 app.get('/', (request, response) => {
-  response.redirect('index.html')
+  response.sendFile(__dirname+'/index.html');
 })
 
 app.get('/vehicle/:id', async (request, response) => {
