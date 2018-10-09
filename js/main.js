@@ -20,7 +20,7 @@ function setVehicleFromUrlHash() {
 setVehicleFromUrlHash();
 
 
-Papa.parse("http://localhost:9005/top-10k-vehicles.csv", {
+Papa.parse("/top-10k-vehicles.csv", {
   download: true,
   header: true,
   complete: function(results) {
