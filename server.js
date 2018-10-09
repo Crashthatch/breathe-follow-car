@@ -1,4 +1,5 @@
 const express = require('express')
+const compression = require('compression')
 const app = express()
 const port = 9005
 const { Pool, Client } = require('pg')
@@ -9,6 +10,8 @@ const pool = new Pool({
   database: 'anpr',
   password: 'bathhacked',
 })
+
+app.use(compression())
 
 app.get('/', (request, response) => {
   response.sendFile(__dirname+'/index.html');
