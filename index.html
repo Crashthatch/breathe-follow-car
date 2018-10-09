@@ -27,59 +27,53 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div class="row no-gutters">
+            <div class="col-sm">
+                <div id="map" style="height: 500px"></div>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm">
-                                <div id="map" style="height: 500px"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <div class="btn btn-primary" onclick="prev()"> &lt; Prev</div>
-                            </div>
-                            <div class="col-8">
-                                <div class="dateWrapper h4" style="text-align: center; margin-top: 0.5rem; margin-top: 0.5rem;">
-                                    <span id="readingnum">Reading</span>
-                                    <span id="date">Time</span>
-                                    - Heading:
-                                    <span id="direction"></span>
-                                </div>
-                            </div>
-                            <div class="col-2" style="text-align: right;">
-                                <div class="btn btn-primary" onclick="next()">Next &gt; </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <table class="table-sm">
-                                <tr><td>Vehicle ID: </td><td>
-                                    <div style="display: inline-block">
-                                        <input type="text" id="vehicleid" value="4e1334a0-edc9-423e-ba33-5cb73e893cf5" style="width: 350px;" />
-                                    </div>
-                                    <input class="btn btn-primary" type="button" onclick="setHashFromTextbox()" value="Load"/>
-                                  </td><td width="300">
-                                  (autocompletes the top 10k vehicles, but will work with in <b>any</b> pasted vehicle ID)
-                                </td></tr>
-                                <tr><td>Type: </td><td><span id="type"></span></td></tr>
-                                <tr><td>Subtype: </td><td><span id="subtype"></span></td></tr>
-                                <tr><td>Make: </td><td><span id="make"></span></td></tr>
-                                <tr><td>Taxi Type: </td><td><span id="taxitype"></span></td></tr>
-                                <tr><td>Engine Capacity: </td><td><span id="enginecapacity"></span></td></tr>
-                                <tr><td>Fuel Type: </td><td><span id="fueltype"></span></td></tr>
-                                <tr><td><a href="https://en.wikipedia.org/wiki/European_emission_standards" target="_blank">Euro Status</a>: </td><td><span id="eurostatus"></span></td></tr>
-                                <tr><td>Intro Date: </td><td><span id="introdate"></span></td></tr>
-                                <tr><td>Gross Vehicle Weight: </td><td><span id="grossvehicleweight"></span></td></tr>
-                                <tr><td>Fuel Consumption Combined: </td><td><span id="fc_combined"></span></td></tr>
-                                <tr><td>Fuel Consumption Extra Urban: </td><td><span id="fc_extra_urban"></span></td></tr>
-                                <tr><td>Fuel Consumption Urban Cold: </td><td><span id="fc_urban_cold"></span></td></tr>
-                                <tr><td>CO2: </td><td><span id="co2"></span></td></tr>
-                            </table>
-                        </div>
+                <div class="col-2">
+                    <div class="btn btn-primary" onclick="prev()"> &lt; Prev</div>
+                </div>
+                <div class="col-8">
+                    <div class="dateWrapper h4" style="text-align: center; margin-top: 0.5rem; margin-top: 0.5rem;">
+                        <span id="readingnum">Reading</span>
+                        <span id="date">Time</span>
+                        - Heading:
+                        <span id="direction"></span>
                     </div>
                 </div>
-            </diV>
+                <div class="col-2" style="text-align: right;">
+                    <div class="btn btn-primary" onclick="next()">Next &gt; </div>
+                </div>
+            </div>
+            <div class="row">
+                <table class="table-sm">
+                    <tr><td>Vehicle ID: </td><td>
+                        <div style="display: inline-block">
+                            <input type="text" id="vehicleid" value="4e1334a0-edc9-423e-ba33-5cb73e893cf5" style="width: 350px;" />
+                        </div>
+                        <input class="btn btn-primary" type="button" onclick="setHashFromTextbox()" value="Load"/>
+                      </td><td width="300">
+                      (autocompletes the top 10k vehicles, but will work with in <b>any</b> pasted vehicle ID)
+                    </td></tr>
+                    <tr><td>Type: </td><td><span id="type"></span></td></tr>
+                    <tr><td>Subtype: </td><td><span id="subtype"></span></td></tr>
+                    <tr><td>Make: </td><td><span id="make"></span></td></tr>
+                    <tr><td>Taxi Type: </td><td><span id="taxitype"></span></td></tr>
+                    <tr><td>Engine Capacity: </td><td><span id="enginecapacity"></span></td></tr>
+                    <tr><td>Fuel Type: </td><td><span id="fueltype"></span></td></tr>
+                    <tr><td><a href="https://en.wikipedia.org/wiki/European_emission_standards" target="_blank">Euro Status</a>: </td><td><span id="eurostatus"></span></td></tr>
+                    <tr><td>Intro Date: </td><td><span id="introdate"></span></td></tr>
+                    <tr><td>Gross Vehicle Weight: </td><td><span id="grossvehicleweight"></span></td></tr>
+                    <tr><td>Fuel Consumption Combined: </td><td><span id="fc_combined"></span></td></tr>
+                    <tr><td>Fuel Consumption Extra Urban: </td><td><span id="fc_extra_urban"></span></td></tr>
+                    <tr><td>Fuel Consumption Urban Cold: </td><td><span id="fc_urban_cold"></span></td></tr>
+                    <tr><td>CO2: </td><td><span id="co2"></span></td></tr>
+                </table>
+            </div>
         </div>
 
         <script src="node_modules/jquery/dist/jquery.js"></script>
