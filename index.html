@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
         <link rel="stylesheet" href="node_modules/moment/package.js">
+        <link rel="stylesheet" href="node_modules/typeahead.js-bootstrap4-css/typeaheadjs.css">
         <link rel="stylesheet" href="css/main.css">
 
 
@@ -54,7 +55,9 @@
                         <div class="row">
                             <table class="table-sm">
                                 <tr><td>Vehicle ID: </td><td>
-                                    <input type="text" id="vehicleid" value="4e1334a0-edc9-423e-ba33-5cb73e893cf5" style="width: 350px;" />
+                                    <div style="display: inline-block">
+                                        <input type="text" id="vehicleid" value="4e1334a0-edc9-423e-ba33-5cb73e893cf5" style="width: 350px;" />
+                                    </div>
                                     <input class="btn btn-primary" type="button" onclick="setHashFromTextbox()" value="Load"/>
                                 </td></tr>
                                 <tr><td>Type: </td><td><span id="type"></span></td></tr>
@@ -66,9 +69,9 @@
                                 <tr><td><a href="https://en.wikipedia.org/wiki/European_emission_standards" target="_blank">Euro Status</a>: </td><td><span id="eurostatus"></span></td></tr>
                                 <tr><td>Intro Date: </td><td><span id="introdate"></span></td></tr>
                                 <tr><td>Gross Vehicle Weight: </td><td><span id="grossvehicleweight"></span></td></tr>
-                                <tr><td>FC Combined: </td><td><span id="fc_combined"></span></td></tr>
-                                <tr><td>FC Extra Urban: </td><td><span id="fc_extra_urban"></span></td></tr>
-                                <tr><td>FC Urban Cold: </td><td><span id="fc_urban_cold"></span></td></tr>
+                                <tr><td>Fuel Consumption Combined: </td><td><span id="fc_combined"></span></td></tr>
+                                <tr><td>Fuel Consumption Extra Urban: </td><td><span id="fc_extra_urban"></span></td></tr>
+                                <tr><td>Fuel Consumption Urban Cold: </td><td><span id="fc_urban_cold"></span></td></tr>
                                 <tr><td>CO2: </td><td><span id="co2"></span></td></tr>
                             </table>
                         </div>
@@ -81,6 +84,7 @@
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
         <script src="node_modules/leaflet/dist/leaflet-src.js"></script>
         <script src="node_modules/papaparse/papaparse.js"></script>
+        <script src="node_modules/typeahead.js/dist/typeahead.bundle.min.js"></script>
         <script src="js/main.js"></script>
 
 

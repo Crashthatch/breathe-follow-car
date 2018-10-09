@@ -19,6 +19,36 @@ function setVehicleFromUrlHash() {
 }
 setVehicleFromUrlHash();
 
+
+Papa.parse("http://localhost:9005/top-10k-vehicles.csv", {
+  download: true,
+  header: true,
+  complete: function(results) {
+
+    // constructs the suggestion engine
+    const bloodhoundSuggester = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      local: results.data.map( row => row.vehicle_id )
+    });
+
+    $('#vehicleid').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+      },
+      {
+        name: 'vehicleIds',
+        source: bloodhoundSuggester
+      });
+
+    // Load immediately when value is selected from the dropdown, don't wait for them to press the load button.
+    $('#vehicleid').bind('typeahead:select', function(ev, suggestion) {
+      setHashFromTextbox()
+    });
+  }
+});
+
 /*Papa.parse("http://localhost:9005/a-vehicles-observations.csv", {
   download: true,
   header: true,
