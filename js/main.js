@@ -127,7 +127,7 @@ update = () => {
   console.log(observation)
   layerGroup.clearLayers(); //clear existing markers
   L.marker([observation.latitude, observation.longitude]).addTo(layerGroup)
-  $('#readingnum').text("("+currentObservation+"/"+observations.length+")")
+  $('#readingnum').text("("+(currentObservation+1)+"/"+observations.length+")")
   $('#date').text(dateToString(observation.t))
   $('#direction').text(observation.direction)
 }
